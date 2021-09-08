@@ -94,6 +94,18 @@ button.outlined,
     border: 0.2rem solid var(--blue);
 }
 
+button.red,
+.button.red{
+    background: var(--red);
+    color: var(--white);
+}
+
+button.grey,
+.button.grey{
+    background: var(--light-grey);
+    color: var(--grey-dark);
+}
+
 /* img */
 button > img,
 .button > img{
