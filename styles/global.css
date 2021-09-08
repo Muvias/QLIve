@@ -26,6 +26,7 @@ html{
     --grey-blue: #A1B2CD;
     --grey-medium: #D3D9E2;
     --light-grey: #E5EAF1;
+    --grey-read: #eaecf2;
 
     /* 1rem = 10px: */
     font-size: 62.5%;
@@ -94,7 +95,7 @@ button.outlined,
 }
 
 /* img */
-button > img
+button > img,
 .button > img{
     margin-right: 1rem;
     width: 2rem;
