@@ -8,10 +8,10 @@ const routes = express.Router()
 routes.get('/', (req, res) => res.render("index", {page: 'enter-room'}))
 routes.get('/create-pass', (req, res) => res.render("index", {page: 'create-pass'}))
 
-routes.get('/room/:room', (req, res) => res.render("room"))
-
-// Formato que o formulário de dentro da modal precisa passar as informações:
-routes.post('/question/:room/:question/:action', questionController.index)
 routes.post('/create-room', roomController.create)
+routes.get('/room/:room', roomController.open)
+
+routes.post('/question/create/:room', questionController.create)
+routes.post('/question/:room/:question/:action', questionController.index)
 
 module.exports = routes
