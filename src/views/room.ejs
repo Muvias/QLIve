@@ -32,7 +32,7 @@
                     <img src="/images/codigo.svg" alt="Copiar código da sala">
                 </div>
 
-                <a href="#" class="button">
+                <a href="/create-pass" class="button">
                     <img src="/images/users-white.svg" alt="Criar sala">
                     Criar sala
                 </a>
@@ -62,6 +62,10 @@
                 <h2 class="sr-only">Perguntas da comunidade</h2>
                 <div class="questions">
 
+                    <% if (isNoQuestions){ %>
+                        <%- include('parts/noquestion') %> 
+                    <% } %> 
+
                 <% questions.forEach(question => { %>
                     <div class="question-wrapper">
     
@@ -76,11 +80,11 @@
                         </div>
     
                         <div class="actions">
-                            <a href="#" class="check" data-id="2">
+                            <a href="#" class="check" data-id="<%= question.id %> ">
                                 <img src="/images/check.svg" alt="Marcar como lida">
                                 Marcar como lida
                             </a>
-                            <a href="#" class="delete" data-id="2">
+                            <a href="#" class="delete" data-id="<%= question.id %> ">
                                 <img src="/images/trash.svg" alt="Excluir">
                                 Excluir
                             </a>
@@ -88,6 +92,8 @@
     
                     </div>
                 <% }) %> 
+
+                <% questionsRead.forEach(questionRead => { %>
 
                     <div class="question-wrapper read">
 
@@ -97,21 +103,22 @@
                             </div>
 
                             <div class="question">
-                                <p>O que é Typescript?</p>
+                                <p><%= questionRead.title %> </p>
                             </div>
                         </div>
 
                         <div class="actions">
 
-                            <a href="#" class="delete" data-id="1">
+                            <a href="#" class="delete" data-id="<%= questionRead.id %> ">
                                 <img src="/images/trash.svg" alt="Excluir">
                                 Excluir
                             </a>
                         </div>
                         
                     </div>
-                </div>
+                <% }); %> 
 
+                </div>
             </section>
         </main>
 
